@@ -8,7 +8,7 @@ The code is editting and will be finished before the end of this semester.
 
 The system contains three components:
 
-1 A variety of signal generators.
+1 A variety of signal generators which can generate formula data used sympy, or generate sampling points data based on python code.
 
 2 A convolution function. The function will give the formula of the convolution signal.
 
