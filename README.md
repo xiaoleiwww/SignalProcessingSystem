@@ -1,4 +1,4 @@
-# ConvolutionSignalSystem
+# SignalConvolutionSystem
 
 The Convolution Signal System project is a simple python based project for the convolution of signal. The project contains different signal generators. The code can be utilised for the learning of the signal and systems course.
 
