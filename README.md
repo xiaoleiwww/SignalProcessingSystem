@@ -4,5 +4,15 @@ The Convolution Signal System project is a simple python based project for the c
 
 The code is editting and will be finished before the end of this semester.
 
+# Structure of the system
+
+The system contains three components:
+
+1 A signal generator.
+
+2 A convolution function. The function will give the formula of the convolution signal.
+
+3 A visualization system.
+
 # Author
 xiaoleiwww
