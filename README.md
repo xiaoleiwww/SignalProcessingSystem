@@ -6,7 +6,7 @@ The Signal Processing System project is a simple python based project for signal
 
 The system contains three components:
 
-1 A variety of signal generators which can generate formula data used sympy, or generate sampling points data based on python code (pure mathmatics). The function includes linear/nonlinear. The function will be given.
+1 A variety of signal generators which can generate formula data used sympy, or generate sampling points data based on python and c++ code (pure mathmatics). The function includes linear/nonlinear. The function will be given.
 
 2 A processing function. The function will give the formula of the convolution signal.
 
