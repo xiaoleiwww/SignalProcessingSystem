@@ -22,6 +22,32 @@ def conv_list(x, h):
         print('y[{}] = {}'.format(n, y[n]))
     return y
 
+
+def conv_fft(x, h):
+    # Calculate the length of the convolution result and ensure it's a power of 2
+    n = len(x) + len(h) - 1
+    n_fft = 1
+    while n_fft < n:
+        n_fft *= 2
+
+    # Pad the input signals to length n_fft
+    x_padded = np.pad(x, (0, n_fft - len(x)))
+    h_padded = np.pad(h, (0, n_fft - len(h)))
+
+    # Perform FFT on the signals
+    X = np.fft.fft(x_padded)
+    H = np.fft.fft(h_padded)
+
+    # Compute the convolution result
+    Y = X * H
+
+    # Perform inverse FFT to get the convolution result in time domain
+    y = np.fft.ifft(Y)
+
+    # Retain the real part as the convolution result
+    return np.real(y[:n])
+
 x = [-3, 4, 6, 0, -1]
 h = [1, 1, 1, 1]
 print(conv_list(x, h))
+print(conv_fft(x, h))
