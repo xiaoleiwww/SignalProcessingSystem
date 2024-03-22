@@ -2,12 +2,10 @@
 """
 Created on Fri Mar 22 11:42:08 2024
 
-@author: Lenovo
+@author: xiaoleiwww
 """
-from sympy import sequence, oo
+from sympy import sequence, oo, Piecewise, cos, sin
 from sympy.abc import n
-import math
-import numpy as np
 
 def impulse_sequence():
     return sequence(1, (n, 0, 0))
@@ -24,18 +22,11 @@ def rectangular_sequence(k):
 def real_exponential_sequence(a):
     return sequence(a**n, (n, 0, oo))
 
-def imaginary_sequence_math(k, omega):
-    real_part = math.cos(omega * k)
-    imag_part = math.sin(omega * k)
-    return complex(real_part, imag_part)
+def imaginary_sequence(k, omega):
+    real_part = Piecewise((cos(omega * k), True))
+    imag_part = Piecewise((sin(omega * k), True))
+    return sequence(real_part + imag_part * 1j, (n, 0, oo))
 
-def imaginary_sequence_numpy(k, omega):
-    return np.exp(1j * omega * k)
-
-def sinusoidal_sequence_math(k, w, T):
+def sinusoidal_sequence(k, w, T):
     omega = w*T
-    return imaginary_sequence_math(k, omega)
-
-def sinusoidal_sequence_numpy(k, w, T):
-    omega = w*T
-    return imaginary_sequence_numpy(k, omega)
+    return imaginary_sequence(k, omega)
