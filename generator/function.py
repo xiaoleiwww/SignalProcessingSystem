@@ -4,6 +4,7 @@ Created on Wed Mar 20 17:05:20 2024
 
 @author: xiaoleiwww
 """
+# See https://www.geeksforgeeks.org/sympy-integrals-transforms-fourier_transform-in-python/
 import sympy as sp
 
 class func:
