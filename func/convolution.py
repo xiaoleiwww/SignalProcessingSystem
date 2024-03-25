@@ -47,7 +47,22 @@ def conv_fft(x, h):
     # Retain the real part as the convolution result
     return np.real(y[:n])
 
+def corr(x, y):
+    x = [i for i in reversed(x)]
+    return conv_fft(x, y)
+
+def self_corr(x):
+    return corr(x, x)
+
+
 x = [-3, 4, 6, 0, -1]
 h = [1, 1, 1, 1]
 print(conv_list(x, h))
 print(conv_fft(x, h))
+x = [1, 2, 3, 4]
+x1 = [4, 3, 2, 1]
+y = [-1, 1, -2, 3]
+print(self_corr(x))
+print(conv_fft(x1, x))
+print(corr(x, y))
+print(corr(y, x))
