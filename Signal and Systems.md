@@ -1,6 +1,4 @@
-Signal and Systems
-
-# Learning objects
+# Learning objects of Signal Processing System
 Digital Signal Processing  
 DSP: Digital signal processor (utilise chip maybe)
 
