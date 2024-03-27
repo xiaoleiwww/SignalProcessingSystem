@@ -11,7 +11,7 @@ import numpy as np
 
 def sp_ft(func):
     """
-    Fourier Transform using sympy. The frequncy function must be continuous, otherwise the critical point will not show.
+    Fourier transform using sympy. The frequncy function must be continuous, otherwise the critical point will not show.
     """
     # Using fourier_transform() method
     gfg = fourier_transform(func, t, k)
@@ -19,7 +19,7 @@ def sp_ft(func):
 
 def fdfs(x):
     """
-    Fast Discrete Fourier Series using Cooley-Tukey Algorithm. The input should be list.
+    Fast discrete Fourier series using Cooley-Tukey Algorithm. The input should be list.
     """
     N = len(x)
     if N <= 1:
@@ -29,9 +29,24 @@ def fdfs(x):
     T = [np.exp(-2j * np.pi * k / N) * odd[k] for k in range(N // 2)]
     return [even[k] + T[k] for k in range(N // 2)] + [even[k] - T[k] for k in range(N // 2)]
 
+
+def dtft(x, omega):
+    """
+    Discrete-time Fourier transform. The input should be list.
+    """
+    N = len(x)
+    n = np.arange(N)
+    return np.sum(x * np.exp(-1j * omega * n))
+
+
 # Test
 print(sp_ft(exp(-t**2)))
 print(sp_ft(cos(t**2)))
 x = np.array([1, 2, 3, 4])
 result = fdfs(x)
 print(result)
+
+x = np.array([1, 2, 1])
+omega_values = np.linspace(-np.pi, np.pi, num=1000)
+X = np.array([dtft(x, omega) for omega in omega_values])
+print(X)
