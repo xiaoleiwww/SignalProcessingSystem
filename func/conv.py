@@ -54,7 +54,7 @@ def corr(x, y):
 def self_corr(x):
     return corr(x, x)
 
-
+# Test
 x = [-3, 4, 6, 0, -1]
 h = [1, 1, 1, 1]
 print(conv_list(x, h))
