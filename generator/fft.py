@@ -18,6 +18,9 @@ def sp_fft(func):
     return gfg
 
 def fft(x):
+    """
+    Cooley-Tukey Algorithm.
+    """
     N = len(x)
     if N <= 1:
         return x
