@@ -66,6 +66,7 @@ if __name__ == "__main__":
     y = x*x*x + x
     
     print(y)
+    print(sp.sin(y))
     print(ft.change(y))
     
     print(type(x))
