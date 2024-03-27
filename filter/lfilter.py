@@ -41,7 +41,7 @@ a = [1]
   
 # utilize filter
 y = lfilter(b, a, x)  
-  
+
 # draw filtered signal
 plt.subplot(2, 1, 2)  
 plt.plot(k, s, 'b--', label='s[k]')  
